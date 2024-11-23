@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz de Verbes Irréguliers et Anglais</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+      #quiz-container {
+        display: none;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 90%;
+        max-width: 500px;
+      }
+      h1 {
+        color: #333;
+      }
+      button {
+        margin: 10px 0;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        font-size: 16px;
+      }
+      button#next-button {
+        float: right;
+      display: none;
+        transition: background-color 0.3s;
+        width: 25%;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .options {
+        pointer-events: auto;
+        display: block;
+        margin: 5px 0;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="menuContainer">
+      <h1>Quiz de Verbes Irréguliers et Anglais</h1>
+      <div>
+        <button onclick="startQuiz('irregularVerbs')">
+          Verbes Irréguliers
+        </button>
+        <button onclick="startQuiz('english')">Anglais</button>
+      </div>
+    </div>
+
+    <div id="quiz-container">
+      <div id="question-container"></div>
+      <div id="options-container"></div>
+      <button id="next-button" onclick="nextQuestion()">Suivant</button>
+      <div class="result" id="result-container"></div>
+      <div class="result" id="result-container-final"></div>
+      <button id="restart-button" onclick="restartQuiz()" style="display: none">
+        Recommencer
+      </button>
+      <button id="quit-button" onclick="quitQuiz()" style="display: none">
+        Quitter
+      </button>
+    </div>
+
+    <script>
+      const nextButton = document.getElementById('next-button');
+      const optionButton = document.querySelector('.option')
+      // Fonction pour mélanger un tableau
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Thématiques
+      let irregularVerbs = [
+        {
+          numb: 1,
+          question: `Quel est le prétérit du verbe "to fly" (voler) ?`,
+          answer: "flew",
+          options: shuffleArray(["flown", "flied", "flew", "fly"]),
+        },
+        {
+          numb: 2,
+          question: `Quel est le participe passé du verbe "to give" (donner) ?`,
+          answer: "given",
+          options: shuffleArray(["gave", "gived", "given", "give"]),
+        },
+        {
+          numb: 3,
+          question: `Quel est le prétérit du verbe "to fall" (tomber) ?`,
+          answer: "fell",
+          options: shuffleArray(["fell", "falled", "fallen", "fall"]),
+        },
+        {
+          numb: 4,
+          question: `Quel est le participe passé du verbe "to know" (savoir) ?`,
+          answer: "known",
+          options: shuffleArray(["knew", "known", "knowed", "know"]),
+        },
+        {
+          numb: 5,
+          question: `Quel est le prétérit du verbe "to grow" (grandir) ?`,
+          answer: "grew",
+          options: shuffleArray(["grew", "growed", "grown", "grow"]),
+        },
+      ];
+
+      let irregularVerbs2 = [
+        {
+          numb: 1,
+          question: `Quel est le prétérit du verbe "to eat" (manger) ?`,
+          answer: "ate",
+          options: shuffleArray(["eaten", "ate", "eats", "eat"]),
+        },
+        {
+          numb: 2,
+          question: `Quel est le participe passé du verbe "to see" (voir) ?`,
+          answer: "seen",
+          options: shuffleArray(["saw", "seen", "see", "sighted"]),
+        },
+        {
+          numb: 3,
+          question: `Quel est le prétérit du verbe "to take" (prendre) ?`,
+          answer: "took",
+          options: shuffleArray(["taken", "took", "take", "takes"]),
+        },
+        {
+          numb: 4,
+          question: `Quel est le participe passé du verbe "to write" (écrire) ?`,
+          answer: "written",
+          options: shuffleArray(["wrote", "written", "write", "writes"]),
+        },
+        {
+          numb: 5,
+          question: `Quel est le prétérit du verbe "to drink" (boire) ?`,
+          answer: "drank",
+          options: shuffleArray(["drunk", "drank", "drinked", "drinks"]),
+        },
+      ];
+
+      let irregularVerbs3 = [
+        {
+          numb: 1,
+          question: `Quel est le participe passé du verbe "to come" (venir) ?`,
+          answer: "come",
+          options: shuffleArray(["came", "comed", "come", "coming"]),
+        },
+        {
+          numb: 2,
+          question: `Quel est le prétérit du verbe "to buy" (acheter) ?`,
+          answer: "bought",
+          options: shuffleArray(["bought", "buyed", "buy", "buying"]),
+        },
+        {
+          numb: 3,
+          question: `Quel est le participe passé du verbe "to swim" (nager) ?`,
+          answer: "swum",
+          options: shuffleArray(["swam", "swimmed", "swum", "swim"]),
+        },
+        {
+          numb: 4,
+          question: `Quel est le participe passé du verbe "to wear" (porter des vêtements) ?`,
+          answer: "worn",
+          options: shuffleArray(["weared", "worn", "wore", "wear"]),
+        },
+        {
+          numb: 5,
+          question: `Quel est le prétérit du verbe "to give" (donner) ?`,
+          answer: "gave",
+          options: shuffleArray(["gived", "gaven", "give", "gave"]),
+        },
+      ];
+
+      let english = [
+        {
+          numb: 1,
+          question: `Quel verbe signifie "to come" en français ?`,
+          answer: "venir",
+          options: shuffleArray(["aller", "venir", "partir", "rester"]),
+        },
+        {
+          numb: 2,
+          question: `Quel verbe signifie "to buy" en français ?`,
+          answer: "acheter",
+          options: shuffleArray(["vendre", "acheter", "payer", "louer"]),
+        },
+        {
+          numb: 3,
+          question: `Quel verbe signifie "to get" en français ?`,
+          answer: "obtenir",
+          options: shuffleArray(["donner", "obtenir", "prendre", "perdre"]),
+        },
+        {
+          numb: 4,
+          question: `Quel verbe signifie "to break" en français ?`,
+          answer: "casser",
+          options: shuffleArray([
+            "réparer",
+            "casser",
+            "construire",
+            "détruire",
+          ]),
+        },
+        {
+          numb: 5,
+          question: `Quel verbe signifie "to forbid" en français ?`,
+          answer: "interdire",
+          options: shuffleArray([
+            "autoriser",
+            "interdire",
+            "permettre",
+            "obliger",
+          ]),
+        },
+      ];
+      let english2 = [
+        {
+          numb: 1,
+          question: `Quel verbe signifie "to think" en français ?`,
+          answer: "penser",
+          options: shuffleArray(["penser", "croire", "savoir", "comprendre"]),
+        },
+        {
+          numb: 2,
+          question: `Quel verbe signifie "to drink" en français ?`,
+          answer: "boire",
+          options: shuffleArray(["boire", "manger", "dormir", "courir"]),
+        },
+        {
+          numb: 3,
+          question: `Quel verbe signifie "to teach" en français ?`,
+          answer: "enseigner",
+          options: shuffleArray(["apprendre", "enseigner", "étudier", "lire"]),
+        },
+        {
+          numb: 4,
+          question: `Quel verbe signifie "to sleep" en français ?`,
+          answer: "dormir",
+          options: shuffleArray([
+            "dormir",
+            "rêver",
+            "se réveiller",
+            "s'endormir",
+          ]),
+        },
+        {
+          numb: 5,
+          question: `Quel verbe signifie "to write" en français ?`,
+          answer: "écrire",
+          options: shuffleArray(["écrire", "lire", "dessiner", "parler"]),
+        },
+      ];
+      let english3 = [
+        {
+          numb: 1,
+          question: `Quel verbe signifie "to sing" en français ?`,
+          answer: "chanter",
+          options: shuffleArray(["chanter", "danser", "écouter", "jouer"]),
+        },
+        {
+          numb: 2,
+          question: `Quel verbe signifie "to run" en français ?`,
+          answer: "courir",
+          options: shuffleArray(["marcher", "courir", "sauter", "nager"]),
+        },
+        {
+          numb: 3,
+          question: `Quel verbe signifie "to fall" en français ?`,
+          answer: "tomber",
+          options: shuffleArray(["monter", "tomber", "grimper", "descendre"]),
+        },
+        {
+          numb: 4,
+          question: `Quel verbe signifie "to give" en français ?`,
+          answer: "donner",
+          options: shuffleArray(["donner", "prendre", "recevoir", "offrir"]),
+        },
+        {
+          numb: 5,
+          question: `Quel verbe signifie "to speak" en français ?`,
+          answer: "parler",
+          options: shuffleArray(["parler", "écouter", "lire", "écrire"]),
+        },
+      ];
+
+      let currentQuestionIndex = 0;
+      let score = 0;
+      let totalQuestions = 0;
+      let questions = [];
+
+      
+      
+      function startQuiz(theme) {
+        currentQuestionIndex = 0;
+        score = 0;
+        console.log("Thème choisi : " + theme);
+        if (theme === "irregularVerbs") {
+          // Choisir aléatoirement entre les deux ensembles de verbes irréguliers
+          const randomSet =
+            Math.random() < 0.25 ? irregularVerbs : (Math.random() < 0.5 ? irregularVerbs2 : irregularVerbs3);
+            console.log("Ensemble de verbes irréguliers choisi : ", 
+        randomSet === irregularVerbs ? "irregularVerbs" : 
+        randomSet === irregularVerbs2 ? "irregularVerbs2" : 
+        "irregularVerbs3"
+    );
+          questions = shuffleArray(randomSet);
+        } else if (theme === "english") {
+          const randomSet1 =
+            Math.random() < 0.25 ? english :(Math.random() < 0.5 ? english2 : english3) ;
+            console.log("Ensemble de verbes irréguliers choisi : ", 
+        randomSet1 === english ? "english" : 
+        randomSet1 === english2 ? "english2" : 
+        "english3");
+          questions = shuffleArray(randomSet1);          
+        }
+
+        totalQuestions = questions.length;
+        document.getElementById("quiz-container").style.display = "block";
+        document.getElementById("result-container").innerHTML = "";
+        document.getElementById("restart-button").style.display = "none";
+        document.getElementById("quit-button").style.display = "none";
+        document.getElementById("menuContainer").style.display = "none";
+
+        showQuestion();
+      }
+
+      function showQuestion() {
+        const questionContainer = document.getElementById("question-container");
+        const optionsContainer = document.getElementById("options-container");
+
+        questionContainer.innerHTML = questions[currentQuestionIndex].question;
+        optionsContainer.innerHTML = "";
+
+        questions[currentQuestionIndex].options.forEach((option) => {
+          const button = document.createElement("button");
+          button.innerText = option;
+          button.className = "options";
+          button.onclick = () => checkAnswer(option);
+          optionsContainer.appendChild(button);
+        });
+      }
+
+      function checkAnswer(selectedOption) {
+        const correctAnswer = questions[currentQuestionIndex].answer;
+        const resultContainer = document.getElementById("result-container");        
+        nextButton.style.display = "inline-block";      
+            
+
+        if (selectedOption.toLowerCase() === correctAnswer.toLowerCase()) {          
+          score++;
+          resultContainer.innerHTML = `<p class="correct">Correct ! La bonne réponse est : ${correctAnswer}.</p>`;
+        } else {
+          resultContainer.innerHTML = `<p class="incorrect">Incorrect ! La bonne réponse est : ${correctAnswer}.</p>`;
+        }
+        // nextQuestion();
+        // optionButton.style.pointerEvents = "red";  
+      }
+
+      function nextQuestion() {
+        nextButton.style.display = "none";
+        currentQuestionIndex++;
+        if (currentQuestionIndex < totalQuestions) {          
+          setTimeout(showQuestion, 20); // Pause de 2 secondes avant de montrer la prochaine question
+          
+
+
+        } else {
+          showResult();
+        }
+      }
+
+      function showResult() {
+        const resultContainer = document.getElementById(
+          "result-container-final"
+        );
+        resultContainer.innerHTML = `Vous avez fait ${
+          totalQuestions - score
+        } fautes sur ${totalQuestions} questions.<br>`;
+        if (score === totalQuestions) {
+          resultContainer.innerHTML +=
+            "Excellent travail ! Vous avez tout bon !";
+        } else if (score >= totalQuestions / 2) {
+          resultContainer.innerHTML +=
+            "Bon travail ! Vous avez une bonne compréhension.";
+        } else {
+          resultContainer.innerHTML +=
+            "Il semble que vous ayez besoin de plus de pratique.";
+        }
+
+        // Afficher les boutons recommencer et quitter
+        document.getElementById("restart-button").style.display = "block";
+        document.getElementById("quit-button").style.display = "block";
+      }
+
+      function restartQuiz() {
+        document.getElementById("quiz-container").style.display = "none";
+        document.getElementById("result-container").innerHTML = "";
+        document.getElementById("menuContainer").style.display = "block";
+      }
+
+      function quitQuiz() {
+        document.getElementById("quiz-container").style.display = "none";
+        document.getElementById("menuContainer").style.display = "block";
+        alert("Merci d'avoir joué !");
+      }
+    </script>
+  </body>
+</html>

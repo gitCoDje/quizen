@@ -2,9 +2,7 @@ const nextButton = document.getElementById("next-button");
 const optionsContainer = document.getElementById("options-container");
 const resultContainer = document.getElementById("result-container");
 const questionContainer = document.getElementById("question-container");
-const resultContainerFinal = document.getElementById(
-  "result-container-final"
-);
+const resultContainerFinal = document.getElementById("result-container-final");
 const quizContainer = document.getElementById("quiz-container");
 
 // Fonction pour mélanger un tableau
@@ -44,18 +42,26 @@ function startQuiz(theme) {
     questions = shuffleArray(randomSet);
   } else if (theme === "english") {
     const randomSet1 =
-      Math.random() < 0.25
+      Math.random() < 0.2
         ? english
-        : Math.random() < 0.5
+        : Math.random() < 0.4
         ? english2
-        : english3;
+        : Math.random() < 0.6
+        ? english3
+        : Math.random() < 0.8
+        ? english4
+        : english5;
     console.log(
       "Ensemble de verbes irréguliers choisi : ",
       randomSet1 === english
         ? "english"
         : randomSet1 === english2
         ? "english2"
-        : "english3"
+        : randomSet1 === english3
+        ? "english3"
+        : randomSet1 === english4
+        ? "english4"
+        : "english5"
     );
     questions = shuffleArray(randomSet1);
   }
@@ -117,15 +123,12 @@ function nextQuestion() {
 }
 
 function showResult() {
-  const resultContainer = document.getElementById(
-    "result-container-final"
-  );
+  const resultContainer = document.getElementById("result-container-final");
   resultContainer.innerHTML = `Vous avez fait ${
     totalQuestions - score
   } fautes sur ${totalQuestions} questions.<br>`;
   if (score === totalQuestions) {
-    resultContainer.innerHTML +=
-      "Excellent travail ! Vous avez tout bon !";
+    resultContainer.innerHTML += "Excellent travail ! Vous avez tout bon !";
   } else if (score >= totalQuestions / 2) {
     resultContainer.innerHTML +=
       "Bon travail ! Vous avez une bonne compréhension.";
@@ -140,19 +143,18 @@ function showResult() {
 }
 
 function restartQuiz() {
-    currentQuestionIndex = 0;
+  currentQuestionIndex = 0;
   score = 0;
   document.getElementById("quiz-container").style.display = "none";
-  document.getElementById("result-container").innerHTML = "";  
+  document.getElementById("result-container").innerHTML = "";
   optionsContainer.style.display = "block";
   questionContainer.style.display = "block";
   resultContainerFinal.style.display = "none";
   quizContainer.style.display = "block";
   document.getElementById("restart-button").style.display = "none";
   document.getElementById("quit-button").style.display = "none";
-
 }
 
-function quitQuiz() {
-  location.reload();
-}
+  function quitQuiz() {
+    window.location.reload(true);
+  }

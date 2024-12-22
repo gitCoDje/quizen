@@ -108,8 +108,8 @@ let english3 = [
   {
     numb: 3,
     question: `Comment dit-on "devices" en français ?`,
-    answer: ["dispositifs", "appareils"],
-    options: shuffleArray(["dispositifs", "objets", "machines", "appareils"]),
+    answer: "appareils",
+    options: shuffleArray(["disponible", "objets", "machines", "appareils"]),
   },
   {
     numb: 4,
@@ -170,21 +170,21 @@ let english4 = [
   },
   {
     numb: 4,
-    question: `Quel est le terme pour "release" en français ?`,
-    answer: "publication",
+    question: `Quel est le terme pour "The release of" en français ?`,
+    answer: "la sortie de",
     options: shuffleArray([
-      "oralement",
-      "publication",
-      "lancement",
-      "déclaration",
+      "la balade de",
+      "la sortie de",
+      "le lancement de",
+      "la déclaration de",
     ]),
   },
   {
     numb: 5,
     question: `Comment traduit-on "feature" en français ?`,
-    answer: ["caractéristique", "fonctionnalité"],
+    answer: "fonctionnalité",
     options: shuffleArray([
-      "caractéristique",
+      "caractère",
       "fonctionnalité",
       "aspect",
       "élément",
@@ -195,7 +195,7 @@ let english5 = [
   {
     numb: 1,
     question: `Que signifie "instead of" en français ?`,
-    answer: "au lieu du vent",
+    answer: "au lieu de",
     options: shuffleArray([
       "au lieu de",
       "avec du",
@@ -229,10 +229,10 @@ let english5 = [
   {
     numb: 5,
     question: `Que signifie "be able" en français ?`,
-    answer: ["être capable", "pouvoir"],
+    answer: "être capable",
     options: shuffleArray([
       "être capable",
-      "pouvoir",
+      "avoir une table",
       "avoir la possibilité",
       "être en mesure",
     ]),

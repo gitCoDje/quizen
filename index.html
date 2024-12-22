@@ -84,11 +84,13 @@
           Verbes Irréguliers
         </button>
         <button onclick="startQuiz('english')">Anglais</button>
+        <button onclick="startQuiz('irregularVerbs', true)">Verbes Irréguliers (Difficile)</button>
+        <button onclick="startQuiz('english', true)">Anglais (Difficile)</button>
       </div>
     </div>
 
     <div id="quiz-container">
-      <div id="question-container"></div>
+      <div id="question-container" style="margin-bottom: 16px;"></div>
       <div id="options-container"></div>
       <button id="next-button" onclick="nextQuestion()">Suivant</button>
       <div class="result" id="result-container"></div>
@@ -109,6 +111,5 @@
     <script src="assets/script.js"></script>
     <script src="assets/englishQuestion.js"></script>
     <script src="assets/ivQuestion.js"></script>
-   
   </body>
 </html>

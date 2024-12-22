@@ -7,6 +7,23 @@ const quizContainer = document.getElementById("quiz-container");
 
 let isHardMode = false; // Variable pour le mode difficile
 
+document.getElementById('hard-mode-checkbox').addEventListener('change', function() {
+  isHardMode = this.checked; // true si coché, false sinon
+  console.log('isHardMode:', isHardMode); // Affiche la valeur dans la console
+});
+
+document.getElementById('start-button').addEventListener('click', function() {
+  // Ici, vous pouvez utiliser la valeur de isHardMode pour démarrer le quiz
+  console.log('Démarrer le quiz avec isHardMode:', isHardMode);
+});
+
+const startButton = document.getElementById("start-button");
+
+startButton.onclick = () => {
+  const selectedTheme = document.getElementById("theme").value; // Récupérer le thème sélectionné
+  startQuiz(selectedTheme, isHardMode); // Démarrer le quiz avec le thème sélectionné
+};
+
 // Fonction pour mélanger un tableau
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -23,8 +40,6 @@ let questions = [];
 let currentTheme = ""; // Variable pour stocker le thème actuel
 let test = false;
 
-
-
 // Fonction pour démarrer le quiz
 function startQuiz(theme, hardMode = false) {
   currentQuestionIndex = 0;
@@ -32,6 +47,25 @@ function startQuiz(theme, hardMode = false) {
   currentTheme = theme; // Stocker le thème actuel
   isHardMode = hardMode; // Mettre à jour le mode difficile
   console.log("Thème choisi : " + theme);
+
+  // Objet contenant les thèmes et leurs questions
+
+  // etape 1
+  const themes = {
+    english1: english1,
+    english2: english2,
+    english3: english3,
+    english4: english4,
+    english5: english5,
+    english6: english6,
+    english7: english7,
+    english8: english8,
+    english9: english9,
+    english10: english10,
+  };
+
+  // Logique pour la liste déroulante
+  questions = themes[theme] || []; // Si le thème n'existe pas, questions sera un tableau vide
 
   // Logique pour choisir les questions selon le thème
   if (theme === "irregularVerbs") {
@@ -43,18 +77,16 @@ function startQuiz(theme, hardMode = false) {
         : irregularVerbs3;
     questions = shuffleArray(randomSet);
   } else if (theme === "english") {
-    const randomSet1 =
-      Math.random() < 0.2
-        ? english
-        : Math.random() < 0.4
-        ? english2
-        : Math.random() < 0.6
-        ? english3
-        : Math.random() < 0.8
-        ? english4
-        : english5;
+
+    // Etape 2
+    const englishSets = [english1, english2, english3, english4, english5, english6, english7, english8, english9, english10];
+    const randomIndex = Math.floor(Math.random() * englishSets.length);
+    const randomSet1 = englishSets[Math.floor(Math.random() * englishSets.length)];
     questions = shuffleArray(randomSet1);
-  }
+
+    // affiche le theme choisi
+    console.log(`Thème choisi : english${randomIndex + 1}`);
+}
 
   totalQuestions = questions.length;
   if (totalQuestions === 0) {
@@ -101,16 +133,16 @@ function showQuestion() {
 }
 
 // Fonction pour vérifier la réponse
-function checkAnswer(selectedOption) {  
+function checkAnswer(selectedOption) {
   const correctAnswer = questions[currentQuestionIndex].answer;
 
   nextButton.style.display = "inline-block";
   optionsContainer.style.pointerEvents = "none";
   resultContainer.style.display = "block";
 
-  if (selectedOption.toLowerCase() === correctAnswer.toLowerCase()) {    
+  if (selectedOption.toLowerCase() === correctAnswer.toLowerCase()) {
     score++;
-        
+
     resultContainer.innerHTML = `<p class="correct">Correct ! La bonne réponse est : ${correctAnswer}.</p>`;
   } else {
     resultContainer.innerHTML = `<p class="incorrect">Incorrect ! La bonne réponse est : ${correctAnswer}.</p>`;
@@ -181,7 +213,3 @@ function restartQuiz() {
 function quitQuiz() {
   window.location.reload(true);
 }
-
-
-
-

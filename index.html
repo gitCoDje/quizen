@@ -79,6 +79,26 @@
   <body>
     <div id="menuContainer">
       <h1>Quiz de Verbes Irréguliers et Anglais</h1>
+      <div id="theme-selection">
+        <label for="theme">Choisissez une série de questions :</label>
+        <select id="theme">          
+          <option value="english1">Anglais 1</option>
+          <option value="english2">Anglais 2</option>
+          <option value="english3">Anglais 3</option>
+          <option value="english4">Anglais 4</option>
+          <option value="english5">Anglais 5</option>
+          <option value="english6">Anglais 6</option>
+          <option value="english7">Anglais 7</option>
+          <option value="english8">Anglais 8</option>
+          <option value="english9">Anglais 9</option>
+          <option value="english10">Anglais 10</option>
+        </select>
+        <div>
+          <input type="checkbox" id="hard-mode-checkbox" />
+          <label for="hard-mode-checkbox">Mode difficile</label>
+      </div>
+        <button id="start-button">Démarrer le quiz</button>
+      </div>
       <div>
         <button onclick="startQuiz('irregularVerbs')">
           Verbes Irréguliers

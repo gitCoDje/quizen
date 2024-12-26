@@ -267,12 +267,7 @@ let english6 = [
     numb: 5,
     question: `Comment traduit-on "happen" en français ?`,
     answer: "se passer",
-    options: shuffleArray([
-      "se passer",
-      "habitudes",
-      "plus long",
-      "afin que",
-    ]),
+    options: shuffleArray(["se passer", "habitudes", "plus long", "afin que"]),
   },
 ];
 
@@ -281,12 +276,7 @@ let english7 = [
     numb: 1,
     question: `Quel est le mot pour "longer" en français ?`,
     answer: "plus long",
-    options: shuffleArray([
-      "plus long",
-      "surprenant",
-      "souvent",
-      "mensuel",
-    ]),
+    options: shuffleArray(["plus long", "surprenant", "souvent", "mensuel"]),
   },
   {
     numb: 2,
@@ -325,12 +315,7 @@ let english7 = [
     numb: 5,
     question: `Comment traduit-on "would" en français ?`,
     answer: "voudrais",
-    options: shuffleArray([
-      "voudrais",
-      "ressentir",
-      "surprenant",
-      "rarement",
-    ]),
+    options: shuffleArray(["voudrais", "ressentir", "surprenant", "rarement"]),
   },
 ];
 
@@ -339,12 +324,7 @@ let english8 = [
     numb: 1,
     question: `Quel est le mot pour "feels" en français ?`,
     answer: "se sent",
-    options: shuffleArray([
-      "se sent",
-      "tard",
-      "chaque semaine",
-      "mensuel",
-    ]),
+    options: shuffleArray(["se sent", "tard", "chaque semaine", "mensuel"]),
   },
   {
     numb: 2,
@@ -431,12 +411,7 @@ let english9 = [
     numb: 5,
     question: `Comment traduit-on "hourly" en français ?`,
     answer: "horaire",
-    options: shuffleArray([
-      "horaire",
-      "chaque jour",
-      "hebdomadaire",
-      "annuel",
-    ]),
+    options: shuffleArray(["horaire", "chaque jour", "hebdomadaire", "annuel"]),
   },
 ];
 
@@ -445,12 +420,7 @@ let english10 = [
     numb: 1,
     question: `Quel est le mot pour "daily" en français ?`,
     answer: "quotidien",
-    options: shuffleArray([
-      "quotidien",
-      "hebdomadaire",
-      "mensuel",
-      "annuel",
-    ]),
+    options: shuffleArray(["quotidien", "hebdomadaire", "mensuel", "annuel"]),
   },
   {
     numb: 2,
@@ -467,12 +437,7 @@ let english10 = [
     numb: 3,
     question: `Comment dit-on "monthly" en français ?`,
     answer: "mensuel",
-    options: shuffleArray([
-      "mensuel",
-      "tard",
-      "rarement",
-      "à peine jamais",
-    ]),
+    options: shuffleArray(["mensuel", "tard", "rarement", "à peine jamais"]),
   },
   {
     numb: 4,
@@ -501,19 +466,426 @@ let english10 = [
 let english11 = [
   {
     numb: 1,
-    question: `Quel est le mot pour "since" en français ?`,
-    answer: "depuis",
-    options: shuffleArray(["depuis", "tard", "rarement", "chaque jour"]),
+    question: `Quel est le mot pour "the least" en français ?`,
+    answer: "le moins",
+    options: shuffleArray(["le moins", "le plus", "le meilleur", "le pire"]),
   },
   {
     numb: 2,
-    question: `Que signifie "telling" en français ?`,
-    answer: "dire/raconter",
+    question: `Que signifie "I'm as hungry as a horse." en français ?`,
+    answer: "J'ai une faim de loup.",
     options: shuffleArray([
-      "dire/raconter",
-      "surprenant",
-      "ennuyé",
-      "habitudes et états",
+      "J'ai une faim de loup.",
+      "Je suis rassasié.",
+      "J'ai très faim.",
+      "Je n'ai pas faim.",
+    ]),
+  },
+  {
+    numb: 3,
+    question: `Quel est le mot pour "a length of time" en français ?`,
+    answer: "une durée ou une période de temps.",
+    options: shuffleArray([
+      "une durée ou une période de temps.",
+      "une lenterne de temps ou une lampe",
+      "un temps parfait ou presque parfait",
+      "langue de temps ou langue de chat",
+    ]),
+  },
+  {
+    numb: 4,
+    question: `Que signifie "a point in time in the past" en français ?`,
+    answer: "un moment dans le passé.",
+    options: shuffleArray([
+      "un moment dans le passé.",
+      "un futur proche",
+      "une date",
+      "un événement",
+    ]),
+  },
+  {
+    numb: 5,
+    question: `Quel est le mot pour "length" en français ?`,
+    answer: "longueur",
+    options: shuffleArray(["longueur", "largeur", "hauteur", "profondeur"]),
+  },
+];
+let english12 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "heat" en français ?`,
+    answer: "chaleur",
+    options: shuffleArray(["chaleur", "froid", "température", "climat"]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "below" en français ?`,
+    answer: "en dessous",
+    options: shuffleArray([
+      "en dessous",
+      "au-dessus",
+      "près de",
+      "loin de",
+    ]),
+  },
+  {
+    numb: 3,
+    question: `Quel est le mot pour "at the latest" en français ?`,
+    answer: "au plus tard",
+    options: shuffleArray(["au plus tard", "tôt", "tard", "jamais"]),
+  },
+  {
+    numb: 4,
+    question: `Que signifie "till" en français ?`,
+    answer: "jusqu'à",
+    options: shuffleArray(["jusqu'à", "avant", "après", "pendant"]),
+  },
+  {
+    numb: 5,
+    question: `Quel est le mot pour "over" en français ?`,
+    answer: "au-dessus",
+    options: shuffleArray([
+      "au-dessus",
+      "sous",
+      "à travers",
+      "derrière",
     ]),
   },
 ];
+let english13 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "flower" en français ?`,
+    answer: "fleur",
+    options: shuffleArray(["fleur", "plante", "arbre", "buisson"]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "garden" en français ?`,
+    answer: "jardin",
+    options: shuffleArray(["jardin", "parc", "forêt", "champ"]),
+  },
+  {
+    numb: 3,
+    question: `Quel est le mot pour "belong" en français ?`,
+    answer: "appartenir",
+    options: shuffleArray(["appartenir", "posséder", "avoir", "détenir"]),
+  },
+  {
+    numb: 4,
+    question: `Que signifie "horse" en français ?`,
+    answer: "cheval",
+    options: shuffleArray(["cheval", "âne", "mule", "poney"]),
+  },
+  {
+    numb: 5,
+    question: `Quel est le mot pour "travel" en français ?`,
+    answer: "voyager",
+    options: shuffleArray(["voyager", "rester", "explorer", "visiter"]),
+  },
+];
+let english14 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "topics" en français ?`,
+    answer: "sujets",
+    options: shuffleArray(["sujets", "thèmes", "questions", "problèmes"]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "risen" en français ?`,
+    answer: "s'élever / avoir augmenté",
+    options: shuffleArray([
+      "s'élever / avoir augmenté",
+      "descendre / avoir diminuer",
+      "rester",
+      "partir",
+    ]),
+  },
+  {
+    numb: 3,
+    question: `Quel est le mot pour "riding" en français ?`,
+    answer: "montée / équitation",
+    options: shuffleArray(["montée / équitation", "course", "balade / promenenade", "voyage"]),
+  },
+  {
+    numb: 4,
+    question: `Que signifie "horseback" en français ?`,
+    answer: "à cheval",
+    options: shuffleArray(["à cheval", "à pied", "en voiture", "en vélo"]),
+  },
+  {
+    numb: 5,
+    question: `Quel est le mot pour "still" en français ?`,
+    answer: "toujours / encore",
+    options: shuffleArray([
+      "toujours / encore",
+      "jamais / rarement",
+      "parfois",
+      "souvent",
+    ]),
+  },
+];
+let english15 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "plants" en français ?`,
+    answer: "plantes",
+    options: shuffleArray(["plantes", "arbres", "fleurs", "herbes"]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "unless" en français ?`,
+    answer: "à moins que",
+    options: shuffleArray(["à moins que", "si", "bien que", "sauf"]),
+  },
+  {
+    numb: 3,
+    question: `Quel est le mot pour "at the latest" en français ?`,
+    answer: "au plus tard",
+    options: shuffleArray(["au plus tard", "tôt", "tard", "jamais"]),
+  },
+  {
+    numb: 4,
+    question: `Que signifie "until" en français ?`,
+    answer: "jusqu'à",
+    options: shuffleArray(["jusqu'à", "avant", "après", "pendant"]),
+  },
+  {
+    numb: 5,
+    question: `Quel est le mot pour "lend" en français ?`,
+    answer: "prêter",
+    options: shuffleArray(["prêter", "emprunter", "donner", "recevoir"]),
+  },
+];
+let english16 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "marking" en français ?`,
+    answer: "marquage / notation",
+    options: shuffleArray([
+      "marquage / notation",
+      "stylo / crayon ",
+      "évaluation / examen",
+      "signalisation / pancarte",
+    ]),
+  },
+  {
+    numb: 2,
+    question: `Quel est le mot pour "degree" en français ?`,
+    answer: "degré",
+    options: shuffleArray(["degré", "niveau", "étape", "point"]),
+  },
+  {
+    numb: 3,
+    question: `Quel est le mot pour "yet" en français ?`,
+    answer: "encore / déjà",
+    options: shuffleArray(["encore / déjà", "tôt / tard", "et / ou", "jamais / enfin"]),
+  },
+  {
+    numb: 4,
+    question: `Que signifie "jacket" en français ?`,
+    answer: "veste / blouson",
+    options: shuffleArray([
+      "veste / blouson",
+      "chaussette / chaussure",
+      "pull / sweat",
+      "chemise / tee-shirt",
+    ]),
+  },
+  {
+    numb: 5,
+    question: `Quel est le mot pour "climb" en français ?`,
+    answer: "escalader",
+    options: shuffleArray([
+      "escalader",
+      "descendre",
+      "marcher",
+      "courir",
+    ]),
+  },
+];
+let english17 = [
+  {
+    numb: 1,
+    question: `Que signifie "above" en français ?`,
+    answer: "au-dessus",
+    options: shuffleArray([
+      "au-dessus",
+      "en dessous",
+      "près de",
+      "loin de",
+    ]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "it belongs to" en français ?`,
+    answer: "cela appartient à",
+    options: shuffleArray([
+      "cela appartient à",
+      "c'est à moi",
+      "c'est à vous",
+      "c'est à eux",
+    ]),
+  },  
+  {
+    numb: 3,
+    question: `Que signifie "towards" en français ?`,
+    answer: "vers",
+    options: shuffleArray([
+      "vers",
+      "à",
+      "de",
+      "pour",
+    ]),
+  },
+  {
+    numb: 4,
+    question: `Quel est le mot pour "onto" en français ?`,
+    answer: "sur / vers",
+    options: shuffleArray([
+      "sur / vers",
+      "sous / dessous",
+      "à côté de / entre de",
+      "derrière / arrière",
+    ]),
+  },
+  {
+    numb: 5,
+    question: `Que signifie "a flower from the garden" en français ?`,
+    answer: "une fleur du jardin",
+    options: shuffleArray([
+      "une fleur du jardin",
+      "une plante",
+      "un arbre",
+      "un buisson",
+    ]),
+  },
+];
+let english18 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "must" en français ?`,
+    answer: "devoir",
+    options: shuffleArray(["devoir", "pouvoir", "vouloir", "savoir"]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "get" en français ?`,
+    answer: "obtenir / devenir",
+    options: shuffleArray(["obtenir / devenir", "perdre / abandonner", "laisser / partir", "donner / voler"]),
+  },
+  {
+    numb: 3,
+    question: `Quel est le mot pour "horseback" en français ?`,
+    answer: "à cheval",
+    options: shuffleArray([
+      "à cheval",
+      "à pied",
+      "en voiture",
+      "en vélo",
+    ]),
+  },
+  {
+    numb: 4,
+    question: `Que signifie "grass get wet" en français ?`,
+    answer: "l'herbe devient humide",
+    options: shuffleArray(["l'herbe devient humide", "l'herbe est sèche", "l'herbe pousse", "l'herbe devient verte"]),
+  },
+  {
+    numb: 5,
+    question: `Que signifie "travelling" en français ?`,
+    answer: "voyager",
+    options: shuffleArray([
+      "voyager",
+      "rester",
+      "explorer",
+      "visiter",
+    ]),
+  },
+];
+let english19 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "those" en français ?`,
+    answer: "ceux",
+    options: shuffleArray(["ceux", "ces", "cela", "ce"]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "sense" en français ?`,
+    answer: "sens",
+    options: shuffleArray([
+      "sens",
+      "signification",
+      "perception",
+      "idée",
+    ]),
+  },
+  {
+    numb: 3,
+    question: `Que signifie "may" en français ?`,
+    answer: "peut",
+    options: shuffleArray(["peut", "doit", "voudrait", "aimerait"]),
+  },
+  {
+     numb: 4,
+    question: `Que signifie "melts" en français ?`,
+    answer: "fondre",
+    options: shuffleArray(["fondre", "durcir", "geler", "se solidifier"]),
+  },
+  {
+    numb: 5,
+    question: `Quel est le mot pour "at the latest" en français ?`,
+    answer: "au plus tard",
+    options: shuffleArray([
+      "au plus tard",
+      "tôt",
+      "tard",
+      "jamais",
+    ]),
+  },
+];
+let english20 = [
+  {
+    numb: 1,
+    question: `Quel est le mot pour "early" en français ?`,
+    answer: "tôt",
+    options: shuffleArray(["tôt", "tard", "rapidement", "vite"]),
+  },
+  {
+    numb: 2,
+    question: `Que signifie "so" en français ?`,
+    answer: "tellement / donc",
+    options: shuffleArray(["tellement / donc", "aussi / bien", "mais / sauf", "et / puis"]),
+  },
+  {
+    numb: 3,
+    question: `Que signifie "climb" en français ?`,
+    answer: "escalader",
+    options: shuffleArray([
+      "escalader",
+      "descendre",
+      "marcher",
+      "courir",
+    ]),
+  },
+  {
+    numb: 4,
+    question: `Quel est le mot pour "above" en français ?`,
+    answer: "au-dessus",
+    options: shuffleArray([
+      "au-dessus",
+      "en dessous",
+      "près de",
+      "loin de",
+    ]),
+  },
+  {
+    numb: 5,
+    question: `Que signifie "will perhaps" en français ?`,
+    answer: "fera peut-être",
+    options: shuffleArray(["fera peut-être", "fera sûrement", "ne fera pas", "aura peut-être"]),
+  },
+];
+

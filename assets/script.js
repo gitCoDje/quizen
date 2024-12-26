@@ -50,7 +50,7 @@ function startQuiz(theme, hardMode = false) {
 
   // Objet contenant les thèmes et leurs questions
 
-  // etape 1
+  // etape 2 --------------------
   const themes = {
     english1: english1,
     english2: english2,
@@ -62,6 +62,16 @@ function startQuiz(theme, hardMode = false) {
     english8: english8,
     english9: english9,
     english10: english10,
+    english11: english11,
+    english12: english12,
+    english13: english13,
+    english14: english14,
+    english15: english15,
+    english16: english16,
+    english17: english17,
+    english18: english18,
+    english19: english19,
+    english20: english20,
   };
 
   // Logique pour la liste déroulante
@@ -78,8 +88,8 @@ function startQuiz(theme, hardMode = false) {
     questions = shuffleArray(randomSet);
   } else if (theme === "english") {
 
-    // Etape 2
-    const englishSets = [english1, english2, english3, english4, english5, english6, english7, english8, english9, english10];
+    // Etape 3
+    const englishSets = [english1, english2, english3, english4, english5, english6, english7, english8, english9, english10, english11, english12, english13, english14, english15, english16, english17, english18, english19, english20];
     const randomIndex = Math.floor(Math.random() * englishSets.length);
     const randomSet1 = englishSets[Math.floor(Math.random() * englishSets.length)];
     questions = shuffleArray(randomSet1);

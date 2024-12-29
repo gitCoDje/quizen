@@ -4,8 +4,12 @@ const resultContainer = document.getElementById("result-container");
 const questionContainer = document.getElementById("question-container");
 const resultContainerFinal = document.getElementById("result-container-final");
 const quizContainer = document.getElementById("quiz-container");
+const evalBtn = document.querySelector(".eval");
+
 
 let isHardMode = false; // Variable pour le mode difficile
+
+
 
 document
   .getElementById("hard-mode-checkbox")

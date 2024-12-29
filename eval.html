@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Vocabulaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #question-container {
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #options-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+        }
+        .options {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .options:hover {
+            background-color: #0056b3;
+        }
+        #result-container {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz de Vocabulaire</h1>
+    <div id="question-container"></div>
+    <div id="options-container"></div>
+    <div id="result-container"></div>
+
+    <script type="module" src="./assets/evaluationQuestion.js"></script>
+    <script type="module" src="./assets/scriptEval.js"></script>
+</body>
+</html>

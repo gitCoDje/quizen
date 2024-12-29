@@ -25,6 +25,17 @@
         width: 90%;
         max-width: 500px;
       }
+      .eval{
+        user-select: none;        
+      }
+      .eval:hover{
+        cursor: pointer;
+        color: #0056b3  ;
+      }
+      .eval:active{        
+        cursor: pointer;
+        color: #0867ce;
+      }
       h1 {
         color: #333;
       }
@@ -105,7 +116,7 @@
   </head>
   <body>
     <div id="menuContainer">
-      <h1>Quiz de Verbes Irréguliers et Anglais</h1>
+      <h1>Quiz de Verbes Irréguliers, Anglais et <a href="eval.html" class="eval">Eval</a></h1>
       <div id="theme-selection">
         <label for="theme">Choisissez une série de questions :</label>
         <select id="theme">

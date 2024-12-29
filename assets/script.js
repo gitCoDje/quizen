@@ -7,14 +7,16 @@ const quizContainer = document.getElementById("quiz-container");
 
 let isHardMode = false; // Variable pour le mode difficile
 
-document.getElementById('hard-mode-checkbox').addEventListener('change', function() {
-  isHardMode = this.checked; // true si coché, false sinon
-  console.log('isHardMode:', isHardMode); // Affiche la valeur dans la console
-});
+document
+  .getElementById("hard-mode-checkbox")
+  .addEventListener("change", function () {
+    isHardMode = this.checked; // true si coché, false sinon
+    console.log("isHardMode:", isHardMode); // Affiche la valeur dans la console
+  });
 
-document.getElementById('start-button').addEventListener('click', function() {
+document.getElementById("start-button").addEventListener("click", function () {
   // Ici, vous pouvez utiliser la valeur de isHardMode pour démarrer le quiz
-  console.log('Démarrer le quiz avec isHardMode:', isHardMode);
+  console.log("Démarrer le quiz avec isHardMode:", isHardMode);
 });
 
 const startButton = document.getElementById("start-button");
@@ -39,6 +41,7 @@ let totalQuestions = 0;
 let questions = [];
 let currentTheme = ""; // Variable pour stocker le thème actuel
 let test = false;
+
 
 // Fonction pour démarrer le quiz
 function startQuiz(theme, hardMode = false) {
@@ -87,16 +90,37 @@ function startQuiz(theme, hardMode = false) {
         : irregularVerbs3;
     questions = shuffleArray(randomSet);
   } else if (theme === "english") {
-
     // Etape 3
-    const englishSets = [english1, english2, english3, english4, english5, english6, english7, english8, english9, english10, english11, english12, english13, english14, english15, english16, english17, english18, english19, english20];
+    const englishSets = [
+      english1,
+      english2,
+      english3,
+      english4,
+      english5,
+      english6,
+      english7,
+      english8,
+      english9,
+      english10,
+      english11,
+      english12,
+      english13,
+      english14,
+      english15,
+      english16,
+      english17,
+      english18,
+      english19,
+      english20,
+    ];
     const randomIndex = Math.floor(Math.random() * englishSets.length);
-    const randomSet1 = englishSets[Math.floor(Math.random() * englishSets.length)];
+    const randomSet1 =
+      englishSets[Math.floor(Math.random() * englishSets.length)];
     questions = shuffleArray(randomSet1);
 
     // affiche le theme choisi
     console.log(`Thème choisi : english${randomIndex + 1}`);
-}
+  }
 
   totalQuestions = questions.length;
   if (totalQuestions === 0) {
@@ -112,6 +136,45 @@ function startQuiz(theme, hardMode = false) {
 
   showQuestion();
 }
+
+// logique pour bouton aleatoire
+document
+  .getElementById("randomQuestionButton")
+  .addEventListener("click", function () {
+    let themes = {
+      english1: english1,
+      english2: english2,
+      english3: english3,
+      english4: english4,
+      english5: english5,
+      english6: english6,
+      english7: english7,
+      english8: english8,
+      english9: english9,
+      english10: english10,
+      english11: english11,
+      english12: english12,
+      english13: english13,
+      english14: english14,
+      english15: english15,
+      english16: english16,
+      english17: english17,
+      english18: english18,
+      english19: english19,
+      english20: english20,
+    };
+    // Récupérer toutes les questions de tous les thèmes
+    let combinedQuestions = [];
+    for (let key in themes) {
+      combinedQuestions = combinedQuestions.concat(themes[key]);
+    }
+    // Sélectionne une question aléatoire
+    let randomIndex = Math.floor(Math.random() * combinedQuestions.length);
+    let randomQuestion = combinedQuestions[randomIndex];
+    // Affiche la question
+    document.getElementById("question").innerText = randomQuestion.question;
+    document.getElementById("reponse").innerText = randomQuestion.answer;
+  });
 
 // Fonction pour afficher la question actuelle
 function showQuestion() {

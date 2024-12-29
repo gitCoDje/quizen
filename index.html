@@ -68,6 +68,33 @@
         position: absolute;
         bottom: 5px;
       }
+      .hide {
+        user-select: none;
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+        width: 200px;
+        color: #007bff;
+        background-color: #007bff;
+        font-size: 1.2em;
+        text-align: center;
+        margin: 5px auto;
+      }
+      .hide:hover {
+        background-color: #0056b3;
+        color: #0056b3;
+      }
+      .hide:active {
+        background-color: white;
+        color: black;
+      }
+      .textReponse {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+      }
       .foot-left {
         left: 20px;
       }
@@ -81,11 +108,10 @@
       <h1>Quiz de Verbes Irréguliers et Anglais</h1>
       <div id="theme-selection">
         <label for="theme">Choisissez une série de questions :</label>
-        <select id="theme"> 
-          
+        <select id="theme">
           <!-- Pour rajouter des theme a une thematique deja fait suivre les étapes 1.(index.html)2 et 3(script.js) -->
 
-               <!-- etape 1 --> 
+          <!-- etape 1 -->
           <option value="english1">Anglais 1</option>
           <option value="english2">Anglais 2</option>
           <option value="english3">Anglais 3</option>
@@ -105,26 +131,36 @@
           <option value="english17">Anglais 17</option>
           <option value="english18">Anglais 18</option>
           <option value="english19">Anglais 19</option>
-          <option value="english20">Anglais 20</option>          
+          <option value="english20">Anglais 20</option>
         </select>
         <div>
           <input type="checkbox" id="hard-mode-checkbox" />
           <label for="hard-mode-checkbox">Mode difficile</label>
-      </div>
+        </div>
         <button id="start-button">Démarrer le quiz</button>
       </div>
+      <button id="randomQuestionButton">Obtenir une question aléatoire</button>
+      <div>
+        <div id="question"></div>
+        <div class="hide" id="reponse"></div>
+      </div>
+
       <div>
         <button onclick="startQuiz('irregularVerbs')">
           Verbes Irréguliers
         </button>
         <button onclick="startQuiz('english')">Anglais</button>
-        <button onclick="startQuiz('irregularVerbs', true)">Verbes Irréguliers (Difficile)</button>
-        <button onclick="startQuiz('english', true)">Anglais (Difficile)</button>
+        <button onclick="startQuiz('irregularVerbs', true)">
+          Verbes Irréguliers (Difficile)
+        </button>
+        <button onclick="startQuiz('english', true)">
+          Anglais (Difficile)
+        </button>
       </div>
     </div>
 
     <div id="quiz-container">
-      <div id="question-container" style="margin-bottom: 16px;"></div>
+      <div id="question-container" style="margin-bottom: 16px"></div>
       <div id="options-container"></div>
       <button id="next-button" onclick="nextQuestion()">Suivant</button>
       <div class="result" id="result-container"></div>

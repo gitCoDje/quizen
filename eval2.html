@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Eval 1</title>
+    <title>Quiz de Vocabulaire</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +28,6 @@
             max-width: 400px;
         }
         .options {
-            font-size: 1em;
             display: block;
             margin: 5px 0;
             padding: 10px;
@@ -52,6 +51,9 @@
         .incorrect {
             color: red;
         }
+        a{
+        text-decoration: none;
+        }
         .wrap{
             display: flex;
             gap: 1em;
@@ -60,7 +62,7 @@
 </head>
 <body>
 
-    <h1>Quiz du Text 1 evaluation</h1>
+    <h1>Quiz du Text 2 evaluation</h1>
     <div id="question-container"></div>
     <div id="options-container"></div>
     <div id="result-container"></div>
@@ -71,12 +73,12 @@
       <button id="quit-button" class="options">
         Quitter
       </button>
-      <button id="eval2-button" class="options">
-        Eval 2
+      <button id="eval-button" class="options">
+        Eval 1
       </button></div>
     
 
-    <script type="module" src="./assets/evaluationQuestion.js"></script>
-    <script type="module" src="./assets/scriptEval.js"></script>
+    <script type="module" src="./assets/evaluationQuestion2.js"></script>
+    <script type="module" src="./assets/scriptEval2.js"></script>
 </body>
 </html>

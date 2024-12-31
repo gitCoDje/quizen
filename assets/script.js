@@ -263,6 +263,9 @@ function showResult() {
   // Afficher les boutons recommencer et quitter
   document.getElementById("restart-button").style.display = "block";
   document.getElementById("quit-button").style.display = "block";
+  // Afficher le bouton "Thème suivant"
+  document.getElementById("next-theme-button").style.display = "block";
+
 }
 
 // Fonction pour redémarrer le quiz
@@ -290,3 +293,58 @@ function restartQuiz() {
 function quitQuiz() {
   window.location.reload(true);
 }
+
+let currentThemeIndex = 0; // Index du thème actuel
+const themesList = [
+  "english1",
+  "english2",
+  "english3",
+  "english4",
+  "english5",
+  "english6",
+  "english7",
+  "english8",
+  "english9",
+  "english10",
+  "english11",
+  "english12",
+  "english13",
+  "english14",
+  "english15",
+  "english16",
+  "english17",
+  "english18",
+  "english19",
+  "english20",
+];
+
+// Événement pour le bouton "Thème suivant"
+document.getElementById("next-theme-button").addEventListener("click", function() {
+  currentThemeIndex = (currentThemeIndex + 1) % themesList.length; // Passer au thème suivant
+  const nextTheme = themesList[currentThemeIndex]; // Obtenir le prochain thème
+  restartQuiz(nextTheme); // Redémarrer le quiz avec le nouveau thème
+});
+
+// Fonction pour redémarrer le quiz avec un thème spécifique
+function restartQuiz(theme) {
+  currentQuestionIndex = 0; // Réinitialiser l'index des questions
+  score = 0; // Réinitialiser le score
+
+  // Cacher les éléments du quiz
+  document.getElementById("quiz-container").style.display = "none";
+  resultContainer.innerHTML = "";
+  optionsContainer.style.display = "block";
+  questionContainer.style.display = "block";
+  resultContainerFinal.style.display = "none";
+  quizContainer.style.display = "block";
+
+  // Cacher les boutons de redémarrage et de quitter
+  document.getElementById("restart-button").style.display = "none";
+  document.getElementById("quit-button").style.display = "none";
+  document.getElementById("next-theme-button").style.display = "none";
+
+  // Relancer le quiz avec le nouveau thème et le mode actuel
+  startQuiz(theme, isHardMode); // Utiliser le thème et le mode stockés
+}
+
+

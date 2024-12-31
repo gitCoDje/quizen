@@ -1,12 +1,12 @@
 // scriptEval.js
-import { evaluation } from './evaluationQuestion.js';
+import { evaluation } from './evaluationQuestion2.js';
 
 let currentQuestionIndex = 0;
 let score = 0;
 const totalQuestions = evaluation.length;
 const quitBtn = document.getElementById("quit-button");
 const restartBtn = document.getElementById("restart-button");
-const eval2Btn = document.getElementById("eval2-button");
+const evalBtn = document.getElementById("eval-button");
 
 restartBtn.addEventListener("click",()=>{
     window.location.reload(true);
@@ -15,10 +15,9 @@ quitBtn.addEventListener("click",()=>{
     window.location.href = "./index.html";
 });
 
-eval2Btn.addEventListener("click",()=>{
-    window.location.href = "./eval2.html";
+evalBtn.addEventListener("click",()=>{
+    window.location.href = "./eval.html";
 })
-
 
 function startQuiz() {
     currentQuestionIndex = 0;
@@ -73,7 +72,6 @@ function showResult() {
     resultContainer.innerHTML = `Vous avez fait ${totalQuestions - score} fautes sur ${totalQuestions} questions.<br>`;
     resultContainer.innerHTML += score === totalQuestions ? "Excellent travail ! Vous avez tout bon !" : "Il semble que vous ayez besoin de plus de pratique.";
 }
-
 
 // Démarrer le quiz lorsque le document est prêt
 document.addEventListener("DOMContentLoaded", startQuiz);

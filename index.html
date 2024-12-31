@@ -112,11 +112,14 @@
       .foot-right {
         right: 20px;
       }
+      a{
+        text-decoration: none;
+        }
     </style>
   </head>
   <body>
     <div id="menuContainer">
-      <h1>Quiz de Verbes Irréguliers, Anglais et <a href="eval.html" class="eval">Eval</a></h1>
+      <h1>Quiz Anglais et Eval<a href="eval.html" class="eval"> 1 </a>et<a href="eval2.html" class="eval2"> 2 </a></h1>
       <div id="theme-selection">
         <label for="theme">Choisissez une série de questions :</label>
         <select id="theme">
@@ -182,6 +185,7 @@
       <button id="quit-button" onclick="quitQuiz()" style="display: none">
         Quitter
       </button>
+      <button id="next-theme-button" style="display: none;">Thème suivant</button>
     </div>
     <footer>
       <small class="foot-left"

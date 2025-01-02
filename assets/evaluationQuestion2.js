@@ -97,10 +97,10 @@ const evaluation = [
   },
   {
     numb: 10,
-    question: `Que signifie "type" en français ?`,
-    answer: "type / taper",
+    question: `Que signifie "tricking" en français ?`,
+    answer: "tromperie / duper",
     options: shuffleArray([
-      "type / taper",
+      "tromperie / duper",
       "copie / modèle",
       "coller / modifier",
       "formulaire / document",
@@ -220,13 +220,13 @@ const evaluation = [
   },
   {
     numb: 23,
-    question: `Que signifie "upn" en français ?`,
-    answer: "Nom Principal d'Utilisateur",
+    question: `Que signifie "leads" en français ?`,
+    answer: "mène / conduit",
     options: shuffleArray([
-      "Nom Principal d'Utilisateur",
-      "Nom d'utilisateur / Identifiant",
+      "mène / conduit",
+      "porter / surmonter",
       "Mot de passe / Code",
-      "Adresse e-mail / Contact",
+      "éloigner / exclure",
     ]),
   },
   {

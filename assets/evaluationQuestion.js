@@ -274,12 +274,12 @@ const evaluation = [
   {
     numb: 34,
     question: `Que signifie "then" en français ?`,
-    answer: "alors / puis",
+    answer: "alors / puis /ensuite",
     options: shuffleArray([
-      "alors / puis",
-      "ensuite / après",
-      "ça / c'est",
-      "après / suite",
+      "alors / puis /ensuite",
+      "suite / après",
+      "ça / c'est / cela",
+      "avant / précédent",
     ]),
   },
   {
